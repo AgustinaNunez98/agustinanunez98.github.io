@@ -1,2 +1,137 @@
-<h1>Hola</h1>
-<h2>Holaa</h2>
+<!-- DOCTYPE HTML 5--> <!--#Versión de html que usamos#-->
+<!DOCTYPE html>
+
+<!-- etiqueta de inicio html-->
+<html lang="en" style="border: 2px dashed blue"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>1era clase</title>
+</head>
+<body style="border: 3px solid red"> <!--body es el cuerpo de la página-->
+    <h1>Título principal</h1> 
+    <header style="border: 5px dotted green"><!--header es la cabecera de la página o de una sección-->
+        <img src="media/img/logo.png" alt="Logo del sitio" width="100%" height="100">
+        <h1>Título principal</h1> 
+        <h2>Título secundario</h2>
+        <nav>
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">Productos</a></li>
+                <li><a href="">Servicios</a></li>
+                <li><a href="">Contacto</a></li>
+               </ul>
+        </nav>
+    </header>
+<main style="border: 10px double grey;"><!--main es el contenido principal del sitio-->
+    <!--Acá estamos dentro del main-->
+    <section> <!--section es una sección de contenido relacionado-->
+    <p> #Lorem10 nos da un texto con 10 palabras
+       <strong>Lorem ipsum</strong> dolor <em>sit amet</em> consectetur <s>adipisicing elit.</s> Assumenda, ducimus!
+    </p>
+    </section>
+    <section id="ubicacion">
+        <h2>¿Dónde estamos?</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.924247724718!2d-58.37905268255614!3d-34.606077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccbb8e123acbd%3A0x5eda26eaa52f5c62!2sBus%20Tur%C3%ADstico-Circuito%20Rojo-Obelisco-Plaza%20de%20Mayo!5e0!3m2!1ses-419!2sar!4v1745537532286!5m2!1ses-419!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </section>      
+    <section>
+        <h3>Listas Ordenadas y Desordenadas</h3>
+        <h4>Ordenadas</h4>
+        <ol>
+            <li>Enero</li>
+            <li>Febrero</li>
+            <li>Marzo</li>
+        </ol>
+        <h4>Desordenadas</h4>
+        <ul>
+            <li>Lunes</li>
+            <li>Martes</li>
+            <li>Miércoles</li>
+        </ul>
+        <h4>Definición</h4>
+        <dl>
+            <dt>HTML</dt>
+            <dd>Lenguaje de marcado utilizado para estructurar contenido en la web.</dd>
+        </dl>
+        <dl>
+            <dt>CSS</dt>
+            <dd>Lenguaje utilizado para aplicar estilos y diseño a las páginas web.</dd>
+        </dl>
+        <dl>
+            <dt>JavaScript</dt>
+            <dd>Lenguaje de programación utilizado para añadir interactividad a las páginas web.</dd>
+        </dl>
+    </section>
+    <section id="Contacto">
+<h2>Contacto</h2>
+<form action="https://formspree.io/f/xblojnwq">
+    method="POST">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="mensaje">Mensaje:</label><br>
+    <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+</form>
+    </section>
+    <section>
+        <h3>Enlaces/Links</h3>
+        <h4>Enlace Externo</h4>
+        <a href="https:www.google.com.ar">Google AR</a>
+        <h4>Enlace Mail</h4>
+        <a href="mailto:info@ejempli.com">Enviar correo</a>
+        <h4>Descarga</h4>
+        <a href="media/img/Mulan.jpeg" download>Descarga imagen</a>
+    </section>
+
+    <section>
+        <h3>Elementos en bloque / en línea</h3>
+        <h4>Bloque / Block</h4>
+        <div style="border: 5px solid orange;">Div 1</div>
+        <div style="border: 5px solid blue;">Div 2</div>
+        <div style="border: 5px solid green;">Div 3</div>
+        <h4>En línea</h4>
+        <span style="border: 3px solid green;">Span1</span>
+        <span style="border: 3px solid orange;">Span2</span>
+        <span style="border: 3px solid indigo;">Span3</span>
+    </section>
+    <section>
+        <h2>Multimedia</h2>
+        <h3>Imágenes (etiqueta img)</h3>
+        <img src="media/img/Mulan.jpeg" width="100%" alt="Mulan">
+        <h3>Imágenes (etiqueta picture)</h3>
+        <picture>
+            <source media="(min-width:960px)" srcset="">
+        </picture>
+    </section>
+    <section id="musica">
+        <h2>Escuchá mientras navegás 🎶</h2>
+        <audio controls loop>
+          <source src="media/audio/enotravida.mp3" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+      </section> 
+      <video controls poster="media/video/images.jpeg" width="100%" height="400">
+        <source src="media/video/queridayo.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+        <track src="media/video/subtitulos.vtt" kind="subtitles" srclang="es" label="Español">
+        <track src="media/video/subtitulos.vtt" kind="subtitles" srclang="en" label="Inglés">
+      </video>    
+
+</main>
+    <footer style="border: 1px solid orchid"> <!--footer es el pie de página-->
+        <!--Acá estamos dentro del footer, pie de pagina-->
+<strong>agusanunez@gmail.com</strong> <!--se usa para marcar texto importante-->
+    </footer>
+    <main>
+        <section>
+            <h3>Css en Línea</h3>
+            <p style="color: red;"></p>
+        </section>
+    </main>
+</body>
+<!-- etiqueta de inicio html-->
+</html>
