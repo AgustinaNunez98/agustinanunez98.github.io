@@ -2,29 +2,32 @@
 <!DOCTYPE html>
 
 <!-- etiqueta de inicio html-->
-<html lang="en" style="border: 2px dashed blue"> 
+<html lang="en"><!--lang es el idioma del contenido de la página-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Mapeando Argentina</title>
+    <link rel="stylesheet" href="css/styles.css"> <!--#linkea el archivo css#-->
 </head>
-<body style="border: 3px solid red"> <!--body es el cuerpo de la página-->
-    <h1>Mapeando Argentina</h1> 
-    <header style="border: 5px dotted green"><!--header es la cabecera de la página o de una sección-->
+<body> <!--body es el cuerpo de la página-->
+    <header class="menu"><!--header es la cabecera de la página o de una sección-->
+        <h1>Mapeando Argentina</h1> 
         <p>Descubrí rutas, paisajes y lugares mágicos en todo el país</p>
         <nav>
             <ul>
-                <li><a href="#Inicio">Inicio</a></li>
-                <li><a href="#Destino">Destinos</a></li>
-                <li><a href="#Nosotros">Nosotros</a></li>
-                <li><a href="#Galería">Galería</a></li>
-                <li><a href="#Contacto">Contacto</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#mapa">Mapa</a></li>
+                <li><a href="#toplugares">Top 5 lugares</a></li>
+                <li><a href="#sobre mí">Sobre mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
                </ul>
         </nav>
     </header>
-<main style="border: 10px double grey;"><!--main es el contenido principal del sitio-->
+<main class="contenido-principal"><!--main es el contenido principal del sitio-->
     <!--Acá estamos dentro del main-->
-    <section id="Inicio"> <!--section es una sección de contenido relacionado-->
+    <section id="inicio"> <!--section es una sección de contenido relacionado-->
     <H2>Bienvenidos a Mapeando Argentina</H2>
     <p>
         Mapeando Argentina es un sitio web dedicado a mostrar los mejores destinos turísticos del país. 
@@ -36,7 +39,7 @@
     </p>
     <img src="media/img/logo.png" alt="Paisaje de La Boca" width="100%" height="100">
     </section>
-    <section id="Destinos">
+    <section id="destinos">
         <h2>Destinos Destacados</h2>
         <p>Te invito a descubrir algunos de los lugares más increíbles del país, región por región.</p>
         <article>
@@ -66,7 +69,88 @@
             Un lugar especial al que siempre quiero volver.</p>
     </article>
     </section>
-    <section id="Nosotros">
+
+    <section id="galeria">
+        <h2>Galería de recuerdos</h2>
+        <p>Un recorrido visual por los destinos que amo y que me inspiran a seguir explorando.</p>
+        <figure>
+            <img src="media/img/galeria1.png" alt="Postal de Pedro Vargas" width="100%" height="auto">
+            <figcaption>Pedro Vargas</figcaption>
+        </figure>
+        <figure>
+            <img src="media/img/galeria2.png" alt="Camino postal de Pedro Vargas" width="100%" height="auto">
+            <figcaption>Pedro Vargas</figcaption>
+        </figure>
+        <figure>
+            <img src="media/img/galeria3.png" alt="Postal Pedro Vargas" width="100%" height="auto">
+            <figcaption>Pedro Vargas</figcaption>
+        </figure>
+        <figure>
+            <img src="media/img/galeria4.png" alt="Postal de Malargüe" width="100%" height="auto">
+            <figcaption>Malargüe</figcaption>
+        </figure>
+        <figure>
+            <img src="media/img/galeria5.png" alt="Postal Hotel abandonado El Sosneado" width="100%" height="auto">
+            <figcaption>Hotel abandonado El Sosneado</figcaption>
+        </figure>
+        <figure>
+            <img src="media/img/galeria6.png" alt="Sendero a Las Coloraadas, San Juan" width="100%" height="auto">
+            <figcaption>Sendero Las Coloradas</figcaption>
+        </figure>
+        <figure>
+            <img src="media/img/galeria7.png" alt="Mirador del Sol, Merlo, San Luis" width="100%" height="auto">
+            <figcaption>Mirador del sol, Merlo, San Luis</figcaption>
+        </figure>
+    </section>
+    <section id="mapa">
+        <h2>El mapa de nuestras próximas aventuras</h2>
+        <p>¡Acá empieza la aventura! Solo falta elegir hacia dónde.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24187108.68104945!2d-81.089230075!3d-42.267253035153836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf5f5fdc667%3A0x3d2f77992af00fa8!2sArgentina!5e0!3m2!1ses-419!2sar!4v1745626295550!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>     
+    <section  id="toplugares">
+        <h2>Mis caminos recorridos y los que me esperan</h2>
+        <h3>Top 5 lugares que más me marcaron</h3>
+        <dl>
+            <dt>Santa Teresita</dt>
+            <dd>Mi refugio familiar junto al mar, lleno de recuerdos y abrazos eternos.</dd>
+            <dt>Bariloche</dt>
+            <dd>Mi primera gran aventura entre lagos cristalinos y montañas mágicas.</dd>
+            <dt>Mendoza</dt>
+            <dd>Tierra de vinos, montañas majestuosas y nuevos sueños que empezaron a crecer</dd>
+            <dt>San Juan</dt>
+            <dd>Un viaje lleno de nuevas experiencias, conociendo lugares que nunca imaginé visitar y rodeada de personas increíblemente amables en cada rincón.</dd>
+            <dt>Misiones</dt>
+            <dd>Una aventura verde, entre vegetación exuberante y animales que hicieron cada día inolvidable.</dd>
+        </dl>
+        <h3>Top 5 lugares que quiero conocer</h3>
+        <ol>
+            <li>Cascada Cifuentes - Buenos Aires
+            <br>
+            <a href="https://maps.app.goo.gl/RpTSC9h6PgiJHLJA8">Cascada Cifuentes</a>
+            </li>
+            <li>Laguna Esmeralda - Ushuaia
+                <br>
+                <a href="https://maps.app.goo.gl/gjBJZVx949qassqw8">Laguna Esmeralda</a>
+            </li>
+            <li>Laguna verde - La Rioja
+                <br>
+                <a href="https://maps.app.goo.gl/SRvoEGHjAbs14pMT8">Laguna Verde</a>
+            </li>
+            <li>Nevado Ojos del Salado - Catamarca
+                <br>
+                <a href="https://maps.app.goo.gl/TdhZm7LXpKSDBvRC7">Nevado Ojos del Salado</a>
+            </li>
+            <li>Mirador camino El Angosto - Jujuy
+                <br>
+                <a href="https://maps.app.goo.gl/GgByCo1mf9pn9fCm6">Mirador camino El Angosto</a>
+            </li>
+        </ol>
+    </section>
+    <section>
+        <h3>Argentina</h3>
+        <a href="media/img/descarga.png" download>Descarga nuestra guía de Argentina</a>
+    </section>
+    <section id="sobre mí">
         <h2>Sombre mí</h2>
         <p>
             Soy una apasionada por los viajes, la naturaleza y el turismo. Me encanta recorrer cada rincón de Argentina, soñando con cenocerla de punta a punta.
@@ -82,42 +166,10 @@
             Te invito a que me cuentes sobre ese lugar en el que te gustaría perderte, ese destino que te hace soñar y que te gustaría visitar.
         </p>      
     </section>
-    <section id="ubicacion">
-        <h2>¿Dónde estamos?</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.924247724718!2d-58.37905268255614!3d-34.606077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccbb8e123acbd%3A0x5eda26eaa52f5c62!2sBus%20Tur%C3%ADstico-Circuito%20Rojo-Obelisco-Plaza%20de%20Mayo!5e0!3m2!1ses-419!2sar!4v1745537532286!5m2!1ses-419!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </section>      
-    <section>
-        <h3>Listas Ordenadas y Desordenadas</h3>
-        <h4>Ordenadas</h4>
-        <ol>
-            <li>Enero</li>
-            <li>Febrero</li>
-            <li>Marzo</li>
-        </ol>
-        <h4>Desordenadas</h4>
-        <ul>
-            <li>Lunes</li>
-            <li>Martes</li>
-            <li>Miércoles</li>
-        </ul>
-        <h4>Definición</h4>
-        <dl>
-            <dt>HTML</dt>
-            <dd>Lenguaje de marcado utilizado para estructurar contenido en la web.</dd>
-        </dl>
-        <dl>
-            <dt>CSS</dt>
-            <dd>Lenguaje utilizado para aplicar estilos y diseño a las páginas web.</dd>
-        </dl>
-        <dl>
-            <dt>JavaScript</dt>
-            <dd>Lenguaje de programación utilizado para añadir interactividad a las páginas web.</dd>
-        </dl>
-    </section>
-    <section id="Contacto">
+    <section id="contacto">
 <h2>Contacto</h2>
 <form action="https://formspree.io/f/xblojnwq">
-    method="POST">
+    <method="POST">
     <label for="nombre">Nombre:</label><br>
     <input type="text" id="nombre" name="nombre" required><br><br>
     <label for="email">Email:</label><br>
@@ -128,39 +180,9 @@
     <button type="submit">Enviar</button>
 </form>
     </section>
-    <section>
-        <h3>Enlaces/Links</h3>
-        <h4>Enlace Externo</h4>
-        <a href="https:www.google.com.ar">Google AR</a>
-        <h4>Enlace Mail</h4>
-        <a href="mailto:info@ejempli.com">Enviar correo</a>
-        <h4>Descarga</h4>
-        <a href="media/img/Mulan.jpeg" download>Descarga imagen</a>
-    </section>
 
-    <section>
-        <h3>Elementos en bloque / en línea</h3>
-        <h4>Bloque / Block</h4>
-        <div style="border: 5px solid orange;">Div 1</div>
-        <div style="border: 5px solid blue;">Div 2</div>
-        <div style="border: 5px solid green;">Div 3</div>
-        <h4>En línea</h4>
-        <span style="border: 3px solid green;">Span1</span>
-        <span style="border: 3px solid orange;">Span2</span>
-        <span style="border: 3px solid indigo;">Span3</span>
-    </section>
-    <section>
-        <h2>Multimedia</h2>
-        <h3>Imágenes (etiqueta img)</h3>
-        <img src="media/img/Mulan.jpeg" width="100%" alt="Mulan">
-        <h3>Imágenes (etiqueta picture)</h3>
-        <picture>
-            <source media="(min-width:960px)" srcset="">
-        </picture>
-    </section>
     <section id="musica">
-        <h2>Escuchá mientras navegás 🎶</h2>
-        <audio controls loop>
+        <audio loop autoplay>
           <source src="media/audio/enotravida.mp3" type="audio/mpeg">
           Tu navegador no soporta el elemento de audio.
         </audio>
@@ -169,20 +191,14 @@
         <source src="media/video/queridayo.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de video.
         <track src="media/video/subtitulos.vtt" kind="subtitles" srclang="es" label="Español">
-        <track src="media/video/subtitulos.vtt" kind="subtitles" srclang="en" label="Inglés">
       </video>    
 
 </main>
-    <footer style="border: 1px solid orchid"> <!--footer es el pie de página-->
-        <!--Acá estamos dentro del footer, pie de pagina-->
-<strong>agusanunez@gmail.com</strong> <!--se usa para marcar texto importante-->
+    <footer> <!--footer es el pie de página-->
+    <p>&copy; 2025 Mapeando Argentina - Todos los derechos reservados.</p> 
+    <p>Creado con amor por Agustina Nuñez &hearts;</p>   <!--Acá estamos dentro del footer, pie de pagina-->
     </footer>
-    <main>
-        <section>
-            <h3>Css en Línea</h3>
-            <p style="color: red;"></p>
-        </section>
-    </main>
+
 </body>
 <!-- etiqueta de inicio html-->
 </html>
