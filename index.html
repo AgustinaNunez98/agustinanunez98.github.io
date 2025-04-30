@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="css/styles.css"> <!--#linkea el archivo css#-->
 </head>
 <body> <!--body es el cuerpo de la página-->
-    <header class="menu"><!--header es la cabecera de la página o de una sección-->
+    <header class="sticky-header"><!--header es la cabecera de la página o de una sección-->
         <h1>Mapeando Argentina</h1> 
         <p>Descubrí rutas, paisajes y lugares mágicos en todo el país</p>
         <nav>
-            <ul>
+            <ul class="nav-list">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#destinos">Destinos</a></li>
                 <li><a href="#galeria">Galería</a></li>
@@ -39,40 +39,44 @@
     </p>
     <img src="media/img/logo.png" alt="Paisaje de La Boca" width="100%" height="100">
     </section>
-    <section id="destinos">
+    <section class="destinos">
         <h2>Destinos Destacados</h2>
         <p>Te invito a descubrir algunos de los lugares más increíbles del país, región por región.</p>
-        <article>
+        
+        <div class="destinos-grid">
+          <article>
             <h3>🌄 Norte Argentino</h3>
             <img src="media/img/norte.png" alt="Paisaje del Norte Argentino" style="width: 100%; height: auto;">
             <p>El Norte te recibe con cerros de mil colores, pueblos mágicos y aventuras que empiezan en cada sendero. De Salta a Jujuy, cada paso es una postal. ¡No te olvides de mirar el cielo desde el Tren a las Nubes!</p>
-        </article> 
-        <article>
+           </article> 
+          <article>
             <h3>🏔 Patagonia</h3>
             <img src="media/img/patagonia.png" alt="Laguna Esmeralda" style="width: 100%; height: auto;">
             <p>Bariloche, El Chaltén, Ushuaia... La región ideal para amantes de la naturaleza, el trekking y los paisajes de ensueño.</p>
-        </article>
-        <article>
-        <h3>🍷 Cuyo</h3>
-        <img src="media/img/cuyo.png" alt="Embalse los Reyunos" style="width: 100%; height: auto;">
-        <p>Entre rutas y viñedos, Cuyo te invita a descubrir paisajes inolvidables. Mendoza, tierra de montañas y buen Malbec, te espera en cada camino.</p>
-        </article>
-        <article>
+          </article>
+         <article>
+         <h3>🍷 Cuyo</h3>
+         <img src="media/img/cuyo.png" alt="Embalse los Reyunos" style="width: 100%; height: auto;">
+         <p>Entre rutas y viñedos, Cuyo te invita a descubrir paisajes inolvidables. Mendoza, tierra de montañas y buen Malbec, te espera en cada camino.</p>
+         </article>
+         <article>
             <h3>🌿 Litoral</h3>
             <img src="media/img/litoral.png" alt="Cascadas del Iguazú" style="width: 100%; height: auto;">
             <p>Ríos inmensos, selvas que abrazan y aventuras bajo el sol. En Misiones, cada sendero te acerca a las Cataratas del Iguazú: un espectáculo natural que te deja sin palabras (¡y un poquito mojado!).</p>
-        </article>
-        <article>
+         </article>
+         <article>
             <h3>🌊 Costa Atlántica - Santa Teresita</h3>
-        <img src="media/img/santateresita.png" alt="Barco de Santa Teresita" style="width: 100%; height: auto;">
-        <p>Un rincón del mar que guarda recuerdos inolvidables. Santa Teresita es más que playa: es paz, familia, atardeceres largos y caminatas junto al mar.
+          <img src="media/img/santateresita.png" alt="Barco de Santa Teresita" style="width: 100%; height: auto;">
+          <p>Un rincón del mar que guarda recuerdos inolvidables. Santa Teresita es más que playa: es paz, familia, atardeceres largos y caminatas junto al mar.
             Un lugar especial al que siempre quiero volver.</p>
-    </article>
+         </article>
+        </div>
     </section>
 
-    <section id="galeria">
+    <section class="galeria">
         <h2>Galería de recuerdos</h2>
         <p>Un recorrido visual por los destinos que amo y que me inspiran a seguir explorando.</p>
+     <div class="galeria-grid"> 
         <figure>
             <img src="media/img/galeria1.png" alt="Postal de Pedro Vargas" width="100%" height="auto">
             <figcaption>Pedro Vargas</figcaption>
@@ -101,60 +105,71 @@
             <img src="media/img/galeria7.png" alt="Mirador del Sol, Merlo, San Luis" width="100%" height="auto">
             <figcaption>Mirador del sol, Merlo, San Luis</figcaption>
         </figure>
+     </div>
     </section>
     <section id="mapa">
         <h2>El mapa de nuestras próximas aventuras</h2>
         <p>¡Acá empieza la aventura! Solo falta elegir hacia dónde.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24187108.68104945!2d-81.089230075!3d-42.267253035153836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf5f5fdc667%3A0x3d2f77992af00fa8!2sArgentina!5e0!3m2!1ses-419!2sar!4v1745626295550!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24187108.68104945!2d-81.089230075!3d-42.267253035153836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf5f5fdc667%3A0x3d2f77992af00fa8!2sArgentina!5e0!3m2!1ses-419!2sar!4v1745626295550!5m2!1ses-419!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </section>     
-    <section  id="toplugares">
-        <h2>Mis caminos recorridos y los que me esperan</h2>
-        <h3>Top 5 lugares que más me marcaron</h3>
-        <dl>
-            <dt>Santa Teresita</dt>
-            <dd>Mi refugio familiar junto al mar, lleno de recuerdos y abrazos eternos.</dd>
-            <dt>Bariloche</dt>
-            <dd>Mi primera gran aventura entre lagos cristalinos y montañas mágicas.</dd>
-            <dt>Mendoza</dt>
-            <dd>Tierra de vinos, montañas majestuosas y nuevos sueños que empezaron a crecer</dd>
-            <dt>San Juan</dt>
-            <dd>Un viaje lleno de nuevas experiencias, conociendo lugares que nunca imaginé visitar y rodeada de personas increíblemente amables en cada rincón.</dd>
-            <dt>Misiones</dt>
-            <dd>Una aventura verde, entre vegetación exuberante y animales que hicieron cada día inolvidable.</dd>
-        </dl>
-        <h3>Top 5 lugares que quiero conocer</h3>
-        <ol>
-            <li>Cascada Cifuentes - Buenos Aires
-            <br>
-            <a href="https://maps.app.goo.gl/RpTSC9h6PgiJHLJA8">Cascada Cifuentes</a>
-            </li>
-            <li>Laguna Esmeralda - Ushuaia
-                <br>
-                <a href="https://maps.app.goo.gl/gjBJZVx949qassqw8">Laguna Esmeralda</a>
-            </li>
-            <li>Laguna verde - La Rioja
-                <br>
-                <a href="https://maps.app.goo.gl/SRvoEGHjAbs14pMT8">Laguna Verde</a>
-            </li>
-            <li>Nevado Ojos del Salado - Catamarca
-                <br>
-                <a href="https://maps.app.goo.gl/TdhZm7LXpKSDBvRC7">Nevado Ojos del Salado</a>
-            </li>
-            <li>Mirador camino El Angosto - Jujuy
-                <br>
-                <a href="https://maps.app.goo.gl/GgByCo1mf9pn9fCm6">Mirador camino El Angosto</a>
-            </li>
-        </ol>
+    <section  class="toplugares">
+     <h2>Mis caminos recorridos y los que me esperan</h2>
+        <div class="top-container">
+            <!-- Lugares que más me marcaron -->
+          <div class="top-col">
+             <h3>Top 5 lugares que más me marcaron</h3>
+             <dl>
+              <dt>Santa Teresita</dt>
+              <dd>Mi refugio familiar junto al mar, lleno de recuerdos y abrazos eternos.</dd>
+              <dt>Bariloche</dt>
+              <dd>Mi primera gran aventura entre lagos cristalinos y montañas mágicas.</dd>
+              <dt>Mendoza</dt>
+              <dd>Tierra de vinos, montañas majestuosas y nuevos sueños que empezaron a crecer</dd>
+              <dt>San Juan</dt>
+              <dd>Un viaje lleno de nuevas experiencias, conociendo lugares que nunca imaginé visitar y rodeada de personas increíblemente amables en cada rincón.</dd>
+              <dt>Misiones</dt>
+              <dd>Una aventura verde, entre vegetación exuberante y animales que hicieron cada día inolvidable.</dd>
+             </dl>
+            </div>
+            <div class="top-col"> 
+              <h3>Top 5 lugares que quiero conocer</h3>
+               <ol>
+                  <li>Cascada Cifuentes - Buenos Aires
+                  <br>
+                  <a href="https://maps.app.goo.gl/RpTSC9h6PgiJHLJA8">Cascada Cifuentes</a>
+                  </li>
+                  <li>Laguna Esmeralda - Ushuaia
+                  <br>
+                  <a href="https://maps.app.goo.gl/gjBJZVx949qassqw8">Laguna Esmeralda</a>
+                  </li>
+                  <li>Laguna verde - La Rioja
+                  <br>
+                  <a href="https://maps.app.goo.gl/SRvoEGHjAbs14pMT8">Laguna Verde</a>
+                  </li>
+                  <li>Nevado Ojos del Salado - Catamarca
+                  <br>
+                  <a href="https://maps.app.goo.gl/TdhZm7LXpKSDBvRC7">Nevado Ojos del Salado</a>
+                  </li>
+                  <li>Mirador camino El Angosto - Jujuy
+                  <br>
+                  <a href="https://maps.app.goo.gl/GgByCo1mf9pn9fCm6">Mirador camino El Angosto</a>
+                 </li>
+                </ol>
+            </div>
+        </div>
     </section>
-    <section>
-        <h3>Argentina</h3>
+    <section class="descarga">
+        <h2>Argentina</h2>
         <a href="media/img/descarga.png" download>Descarga nuestra guía de Argentina</a>
     </section>
     <section id="sobre mí">
-        <h2>Sombre mí</h2>
+     <h2>Sombre mí</h2>
+      <div class="sobre-contenido">
         <p>
-            Soy una apasionada por los viajes, la naturaleza y el turismo. Me encanta recorrer cada rincón de Argentina, soñando con cenocerla de punta a punta.
-            <strong>Mapeando Argentina</strong> nació de ese desea profundo de explorar, descubrir, compartir lo que nuestro país tiene para ofrecer.
+            Soy una apasionada por los viajes, la naturaleza y el turismo. Me encanta recorrer cada rincón de Argentina, soñando con conocerla de punta a punta.
+            <strong>Mapeando Argentina</strong> nació de ese deseo profundo de explorar, descubrir, compartir lo que nuestro país tiene para ofrecer.
         </p>
         <p>Esta página no busca mostrar todo lo que ya conozco, sino invitarte a acompañarme en lo que todavía me falta por descubrir. Quiero contarte sobre mis primeros viajes y sobre los nuevos caminos que hoy recorro con mi familia. Cada experiencia suma una historia nueva al mapa de mi vida</p>
         <p>
@@ -164,21 +179,21 @@
         <p>
             Así como yo tengo mi lugar especial en el mundo, creo que cada persona tiene su propio rincón que guarda recuerdos y emociones.
             Te invito a que me cuentes sobre ese lugar en el que te gustaría perderte, ese destino que te hace soñar y que te gustaría visitar.
-        </p>      
+        </p>
+      </div>      
     </section>
     <section id="contacto">
-<h2>Contacto</h2>
-<form action="https://formspree.io/f/xblojnwq">
-    <method="POST">
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br><br>
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-    <label for="mensaje">Mensaje:</label><br>
-    <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
-
-    <button type="submit">Enviar</button>
-</form>
+      <h2>Contacto</h2>
+     <form action="https://formspree.io/f/xblojnwq">
+      <method="POST">
+      <label for="nombre">Nombre:</label><br>
+      <input type="text" id="nombre" name="nombre" required><br><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="mensaje">Mensaje:</label><br>
+      <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+      <button type="submit">Enviar</button>
+     </form>
     </section>
 
     <section id="musica">
@@ -194,7 +209,7 @@
       </video>    
 
 </main>
-    <footer> <!--footer es el pie de página-->
+    <footer class="derechos"> <!--footer es el pie de página-->
     <p>&copy; 2025 Mapeando Argentina - Todos los derechos reservados.</p> 
     <p>Creado con amor por Agustina Nuñez &hearts;</p>   <!--Acá estamos dentro del footer, pie de pagina-->
     </footer>
