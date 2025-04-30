@@ -421,11 +421,9 @@ img {
 .form-contacto button:hover {
   background-color: #155a8a;
 }
-@media (max-width: 100%) {
+@media (max-width: 600px) {
   .menu {
-    background-color: #fff;
     grid-template-columns: repeat(4, 1fr); /* sigue siendo 4 */
-    grid-auto-rows: auto;
   }
 
   .menu a:nth-child(n+5) {
