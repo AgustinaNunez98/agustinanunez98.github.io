@@ -412,3 +412,15 @@ img {
 .form-contacto button:hover {
   background-color: #155a8a;
 }
+@media (max-width: 768px) {
+  .menu {
+    display: flex;
+    flex-direction: column; /* menú vertical */
+    background-color: #fff;
+  }
+
+  .menu a {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+}
