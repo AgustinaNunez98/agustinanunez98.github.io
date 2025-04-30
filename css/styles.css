@@ -30,15 +30,14 @@ body {
 
 
 /* Sticky header */
-.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.encabezado {
   background: linear-gradient(to right, #a6a6ff, #d0d0ff);
   padding: 20px 10px;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* NO tiene position: sticky */
 }
+
 
 /* Título principal */
 .sticky-header h1 {
