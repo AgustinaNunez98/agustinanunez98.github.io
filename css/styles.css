@@ -412,15 +412,17 @@ img {
 .form-contacto button:hover {
   background-color: #155a8a;
 }
-@media (max-width: 768px) {
+@media (max-width: 100%) {
   .menu {
     display: flex;
     flex-direction: column; /* menú vertical */
     background-color: #fff;
+    margin: 15px 0;
   }
 
   .menu a {
-    padding: 12px 20px;
+    padding: 12px 30px;
     border-bottom: 1px solid #ddd;
+    margin: 15px;
   }
 }
