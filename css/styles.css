@@ -423,15 +423,12 @@ img {
 }
 @media (max-width: 100%) {
   .menu {
-    display: flex;
-    flex-direction: column; /* menú vertical */
     background-color: #fff;
-    margin: 15px 0;
+    grid-template-columns: repeat(4, 1fr); /* sigue siendo 4 */
+    grid-auto-rows: auto;
   }
 
-  .menu a {
-    padding: 12px 30px;
-    border-bottom: 1px solid #ddd;
-    margin: 15px;
+  .menu a:nth-child(n+5) {
+    grid-column: span 1; /* que ocupen solo una columna */
   }
 }
