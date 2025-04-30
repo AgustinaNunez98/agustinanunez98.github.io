@@ -38,6 +38,14 @@ body {
   /* NO tiene position: sticky */
 }
 
+.menu a {
+  display: block; /* fuerza a que se apilen */
+  padding: 10px 15px; /* espacio interno */
+  text-decoration: none;
+  border-bottom: 1px solid #ccc; /* opcional: línea separadora */
+}
+
+
 
 /* Título principal */
 .sticky-header h1 {
