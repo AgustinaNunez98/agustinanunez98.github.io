@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Mapeando Argentina</title>
     <link rel="stylesheet" href="css/styles.css"> <!--#linkea el archivo css#-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body> <!--body es el cuerpo de la página-->
     <header class="encabezado"><!--header es la cabecera de la página o de una sección-->
@@ -25,7 +27,7 @@
 
                 <li><a href="#toplugares">Top 5 lugares</a></li>
 
-                <li><a href="#sobre mí">Sobre mí</a></li>
+                <li><a href="#sobre mi">Sobre mí</a></li>
                 
                 <li><a href="#contacto">Contacto</a></li>
                </ul>
@@ -45,7 +47,7 @@
     </p>
     <img src="media/img/logo.png" alt="Paisaje de La Boca" width="100%" height="100">
     </section>
-    <section class="destinos">
+    <section id="destinos">
         <h2>Destinos Destacados</h2>
         <p>Te invito a descubrir algunos de los lugares más increíbles del país, región por región.</p>
         
@@ -79,7 +81,7 @@
         </div>
     </section>
 
-    <section class="galeria">
+    <section id="galeria">
         <h2>Galería de recuerdos</h2>
         <p>Un recorrido visual por los destinos que amo y que me inspiran a seguir explorando.</p>
      <div class="galeria-grid"> 
@@ -116,11 +118,12 @@
     <section id="mapa">
         <h2>El mapa de nuestras próximas aventuras</h2>
         <p>¡Acá empieza la aventura! Solo falta elegir hacia dónde.</p>
-       <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24187108.68104945!2d-81.089230075!3d-42.267253035153836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf5f5fdc667%3A0x3d2f77992af00fa8!2sArgentina!5e0!3m2!1ses-419!2sar!4v1745626295550!5m2!1ses-419!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+       <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25596424.265591845!2d-63.598995699999996!3d-38.451550000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf5f5fdc667%3A0x3d2f77992af00fa8!2sArgentina!5e0!3m2!1ses-419!2sar!4v1746036888506!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            Descargar mapa de Argentina 
             </iframe>
         </div>
     </section>     
-    <section  class="toplugares">
+    <section  id="toplugares">
      <h2>Mis caminos recorridos y los que me esperan</h2>
         <div class="top-container">
             <!-- Lugares que más me marcaron -->
@@ -144,23 +147,23 @@
                <ol>
                   <li>Cascada Cifuentes - Buenos Aires
                   <br>
-                  <a href="https://maps.app.goo.gl/RpTSC9h6PgiJHLJA8">Cascada Cifuentes</a>
+                  <a href="https://maps.app.goo.gl/RpTSC9h6PgiJHLJA8" target="_blank">Cascada Cifuentes</a>
                   </li>
                   <li>Laguna Esmeralda - Ushuaia
                   <br>
-                  <a href="https://maps.app.goo.gl/gjBJZVx949qassqw8">Laguna Esmeralda</a>
+                  <a href="https://maps.app.goo.gl/gjBJZVx949qassqw8" target="_blank">Laguna Esmeralda</a>
                   </li>
                   <li>Laguna verde - La Rioja
                   <br>
-                  <a href="https://maps.app.goo.gl/SRvoEGHjAbs14pMT8">Laguna Verde</a>
+                  <a href="https://maps.app.goo.gl/SRvoEGHjAbs14pMT8" target="_blank">Laguna Verde</a>
                   </li>
                   <li>Nevado Ojos del Salado - Catamarca
                   <br>
-                  <a href="https://maps.app.goo.gl/TdhZm7LXpKSDBvRC7">Nevado Ojos del Salado</a>
+                  <a href="https://maps.app.goo.gl/TdhZm7LXpKSDBvRC7" target="_blank">Nevado Ojos del Salado</a>
                   </li>
                   <li>Mirador camino El Angosto - Jujuy
                   <br>
-                  <a href="https://maps.app.goo.gl/GgByCo1mf9pn9fCm6">Mirador camino El Angosto</a>
+                  <a href="https://maps.app.goo.gl/GgByCo1mf9pn9fCm6" target="_blank">Mirador camino El Angosto</a>
                  </li>
                 </ol>
             </div>
@@ -170,7 +173,7 @@
         <h2>Argentina</h2>
         <a href="media/img/descarga.png" download>Descarga nuestra guía de Argentina</a>
     </section>
-    <section id="sobre mí">
+    <section id="sobre mi">
      <h2>Sombre mí</h2>
       <div class="sobre-contenido">
         <p>
@@ -190,8 +193,7 @@
     </section>
     <section id="contacto">
       <h2>Contacto</h2>
-     <form action="https://formspree.io/f/xblojnwq">
-      <method="POST">
+     <form action="https://formspree.io/f/xblojnwq" method="POST" target="_blank">
       <label for="nombre">Nombre:</label><br>
       <input type="text" id="nombre" name="nombre" required><br><br>
       <label for="email">Email:</label><br>
@@ -202,24 +204,25 @@
      </form>
     </section>
 
-    <section id="musica">
-        <audio loop autoplay>
-          <source src="media/audio/enotravida.mp3" type="audio/mpeg">
-          Tu navegador no soporta el elemento de audio.
-        </audio>
-      </section> 
+    <section id="video">
+        <h2>Un viaje a través de mis ojos</h2>
+        <p>Un recorrido por los paisajes que me inspiran y los lugares que me llenan el alma.</p>
       <video controls poster="media/video/images.jpeg" width="100%" height="400">
         <source src="media/video/queridayo.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de video.
         <track src="media/video/subtitulos.vtt" kind="subtitles" srclang="es" label="Español">
       </video>    
+    </section>
 
 </main>
     <footer class="derechos"> <!--footer es el pie de página-->
-    <p>&copy; 2025 Mapeando Argentina - Todos los derechos reservados.</p> 
-    <p>Creado con amor por Agustina Nuñez &hearts;</p>   <!--Acá estamos dentro del footer, pie de pagina-->
+     <p>&copy; 2025 Mapeando Argentina - Todos los derechos reservados.</p> 
+     <p><a href="https://www.instagram.com/agus_nunez98/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+     </a>
+        Creado con amor por Agustina Nuñez &hearts;</p>   <!--Acá estamos dentro del footer, pie de pagina-->
     </footer>
-
+ <script src="js/script.js"></script> <!--#linkea el archivo js#-->
 </body>
 <!-- etiqueta de inicio html-->
 </html>

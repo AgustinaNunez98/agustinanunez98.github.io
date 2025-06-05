@@ -1,10 +1,15 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color:#a6a6ff ; /* azul más suave */
-  color: #111;
-  margin: 0;
-  padding: 0;
-}
+   font-family: Arial, sans-serif;
+   background-color:#a6a6ff ; /* azul más suave */
+   color: #111;
+   margin: 0;
+   padding: 0;
+  }
+ @media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+  }
+ }
 #inicio {
   padding: 40px 20px;
   background: linear-gradient(to bottom, #f0f0ff, #e0e0ff);
@@ -44,18 +49,38 @@ body {
   gap: 10px;
   padding: 10px;
   text-align: center;
+  flex-wrap: wrap;
 }
-.menu a {
-  display: block; /* fuerza a que se apilen */
+.menu a {  /*Menu*/
+  display: block;
   padding: 12px; /* espacio interno */
   background-color: #eee;
   border-radius: 8px;
   text-decoration: none;
-  border-bottom: 1px solid #ccc; /* opcional: línea separadora */
+  border-bottom: 5px solid #ccc; /* opcional: línea separadora */
+  margin-bottom: 50px;
+  position: relative;
 }
-
-
-
+@media (max-width: 600px) {
+  .menu {
+    grid-template-columns: repeat(2, 1fr); /* en tablets o pantallas medianas */
+  }
+}
+  @media (max-width: 768px) {
+    .menu {
+      grid-template-columns: 1fr; /* en celulares */
+    }
+    
+  }
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+  .menu {
+      grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+  }
+  .menu a:nth-child(n+3) {
+    grid-column: span 2; /* que ocupen solo una columna */
+  }
+}
 /* Título principal */
 .sticky-header h1 {
   margin: 0;
@@ -421,12 +446,4 @@ img {
 .form-contacto button:hover {
   background-color: #155a8a;
 }
-@media (max-width: 600px) {
-  .menu {
-    grid-template-columns: repeat(4, 1fr); /* sigue siendo 4 */
-  }
 
-  .menu a:nth-child(n+5) {
-    grid-column: span 1; /* que ocupen solo una columna */
-  }
-}
