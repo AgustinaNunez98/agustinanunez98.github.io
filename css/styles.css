@@ -447,3 +447,19 @@ img {
   background-color: #155a8a;
 }
 
+#volverArriba {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #1c75bc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}

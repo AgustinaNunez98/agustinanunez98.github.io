@@ -9,7 +9,6 @@
     <title>Mapeando Argentina</title>
     <link rel="stylesheet" href="css/styles.css"> <!--#linkea el archivo css#-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body> <!--body es el cuerpo de la página-->
     <header class="encabezado"><!--header es la cabecera de la página o de una sección-->
@@ -201,9 +200,10 @@
       <label for="mensaje">Mensaje:</label><br>
       <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
       <button type="submit">Enviar</button>
+        <p> id = "mensaje-error" style = "color: red;"</p>
      </form>
     </section>
-
+ <button id="volverArriba">↑ Volver arriba</button>
     <section id="video">
         <h2>Un viaje a través de mis ojos</h2>
         <p>Un recorrido por los paisajes que me inspiran y los lugares que me llenan el alma.</p>
@@ -214,15 +214,17 @@
       </video>    
     </section>
 
+
 </main>
     <footer class="derechos"> <!--footer es el pie de página-->
+     <p>Última actualización: <span id="fecha"></span></p>
      <p>&copy; 2025 Mapeando Argentina - Todos los derechos reservados.</p> 
      <p><a href="https://www.instagram.com/agus_nunez98/" target="_blank">
         <i class="fab fa-instagram"></i> Instagram
      </a>
         Creado con amor por Agustina Nuñez &hearts;</p>   <!--Acá estamos dentro del footer, pie de pagina-->
     </footer>
- <script src="js/script.js"></script> <!--#linkea el archivo js#-->
+<script src="js/script.js"></script> <!--#linkea el archivo js#-->
 </body>
 <!-- etiqueta de inicio html-->
 </html>
