@@ -53,4 +53,20 @@ document.getElementById("contacto").addEventListener("submit", function(e) {
   alert("Formulario enviado correctamente"); // Podés reemplazar esto por un envío real
   // e.target.submit(); ← descomentá si usás Formspree
 });
-
+fetch('https://jsonplaceholder.typicode.com/posts?_limit=3') // Trae 3 posteos
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('api-posts');
+    data.forEach(post => {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <h3>${post.title}</h3>
+        <p>${post.body}</p>
+        <hr/>
+      `;
+      container.appendChild(div);
+    });
+  })
+  .catch(error => {
+    console.error('Error al traer los posts:', error);
+  });
