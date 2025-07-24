@@ -37,12 +37,12 @@ document.getElementById("contacto").addEventListener("submit", function(e) {
   const email = document.getElementById("email").value.trim();
   const mensajeError = document.getElementById("mensaje-error");
 
-  if (nombre === "" || email === "") {
+  if (nombre === "" || email === "") { //Muestra un mensaje si están vacíos
     mensajeError.textContent = "Por favor, completá todos los campos.";
     return;
   }
 
-  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Verifica si el email tiene un formato válido
   if (!emailValido.test(email)) {
     mensajeError.textContent = "Ingresá un correo válido.";
     return;
@@ -53,6 +53,8 @@ document.getElementById("contacto").addEventListener("submit", function(e) {
   alert("Formulario enviado correctamente"); // Podés reemplazar esto por un envío real
   // e.target.submit(); ← descomentá si usás Formspree
 });
+
+
 fetch('https://jsonplaceholder.typicode.com/posts?_limit=3') // Trae 3 posteos
   .then(response => response.json())
   .then(data => {
