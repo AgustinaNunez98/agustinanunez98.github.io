@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarFecha();
     configurarBotonVolverArriba();
     configurarFormulario();
-    cargarResenas();
+    cargarDestinos();
     //configurarCarrito();
 });
 
@@ -23,7 +23,7 @@ const inputEmail = document.getElementById("email");
 const inputMensaje = document.getElementById("mensaje");
 const mensajeError = document.getElementById("mensaje-error");
 
-const contenedorResenas = document.getElementById("api-posts");
+const contenedorDestinos = document.getElementById("api-posts");
 
 const contenedorProductos = document.getElementById("productos");
 const contenedorCarrito = document.getElementById("lista-carrito");
@@ -78,7 +78,7 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 //    contenedorProductos.appendChild(div);
 //  });
-}
+//}
 
 // Función para agregar un producto al carrito
 //function agregarAlCarrito(id) {
@@ -88,7 +88,7 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 //  carrito.push(producto);
 //  guardarYActualizar();
-//  alert(`${producto.nombre} agregado al carrito`);
+//alert(`${producto.nombre} agregado al carrito`);
 //}
 
 // Función para eliminar un producto del carrito por índice
@@ -104,7 +104,7 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 //  if (contenedorCarrito && totalTexto) {
 //    renderizarCarrito();
 //  }
-}
+//}
 
 //Función configuración del botón "Volver Arriba"
 function configurarBotonVolverArriba() {
