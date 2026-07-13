@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     configurarBotonVolverArriba();
     configurarFormulario();
     cargarResenas();
-    configurarCarrito();
+    //configurarCarrito();
 });
 
 // Array con productos disponibles
@@ -43,47 +43,67 @@ function mostrarFecha() {
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 //Función para configurar el carrito de compras
-function configurarCarrito() {
-  if (contenedorProductos){
-  mostrarProductos();
-  }
+//function configurarCarrito() {
+//  if (contenedorProductos){
+//  mostrarProductos();
+//  }
 
-  if (contenedorCarrito && totalTexto) {
-    renderizarCarrito();
-  }
+//  if (contenedorCarrito && totalTexto) {
+//    renderizarCarrito();
+//  }
 
-  if (btnVaciar) {
-    btnVaciar.addEventListener("click", () => {
-      carrito = [];
-      guardarYActualizar();
-    });
-  }
+//  if (btnVaciar) {
+//    btnVaciar.addEventListener("click", () => {
+//      carrito = [];
+//      guardarYActualizar();
+//    });
+//  }
+// }
+
+// Función para mostrar productos en la página
+//function mostrarProductos() {
+//  if (!contenedorProductos) return;
+
+//  contenedorProductos.innerHTML = "";
+
+//  productos.forEach((producto) => {
+//    const div = document.createElement("div");
+//    div.classList.add("card-producto");
+
+//    div.innerHTML = `
+//      <h3>${producto.nombre}</h3>
+//      <p>Precio: ${formatearPrecio(producto.precio)}</p>
+//      <button type="button" onclick="agregarAlCarrito(${producto.id})">Agregar</button>
+//    `;
+
+//    contenedorProductos.appendChild(div);
+//  });
 }
 
 // Función para agregar un producto al carrito
-function agregarAlCarrito(id) {
-  const producto = productos.find(p => p.id === id);
+//function agregarAlCarrito(id) {
+//  const producto = productos.find(p => p.id === id);
 
-  if(!producto) return;
+//  if(!producto) return;
 
-  carrito.push(producto);
-  guardarYActualizar();
-  alert(`${producto.nombre} agregado al carrito`);
-}
+//  carrito.push(producto);
+//  guardarYActualizar();
+//  alert(`${producto.nombre} agregado al carrito`);
+//}
 
 // Función para eliminar un producto del carrito por índice
-function eliminarDelCarrito(index) {
-  carrito.splice(index, 1);
-  guardarYActualizar();
-}
+//function eliminarDelCarrito(index) {
+//  carrito.splice(index, 1);
+//  guardarYActualizar();
+//}
 
 // Guardar carrito en localStorage y actualizar la vista
-function guardarYActualizar() {
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+//function guardarYActualizar() {
+//  localStorage.setItem("carrito", JSON.stringify(carrito));
 
-  if (contenedorCarrito && totalTexto) {
-    renderizarCarrito();
-  }
+//  if (contenedorCarrito && totalTexto) {
+//    renderizarCarrito();
+//  }
 }
 
 //Función configuración del botón "Volver Arriba"
@@ -114,7 +134,7 @@ function configurarBotonVolverArriba() {
 
 //Función configuración del formulario de contacto
 function configurarFormulario() {
-if (!formulario) return;
+if (!formulario || !inputNombre || !inputEmail || !inputMensaje) return;
 
 formulario.addEventListener("submit", (e) => {
 const nombre = inputNombre.value.trim();
