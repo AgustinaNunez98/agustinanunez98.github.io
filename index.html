@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mapeando Argentina es una guía de viajes con destinos, galerías, mapas y recomendaciones para descubrir los paisajes más increíbles del país.">
     <title>Mapeando Argentina</title>
     <link rel="stylesheet" href="css/styles.css"> <!--#linkea el archivo css#-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -24,7 +25,7 @@
 
                 <li><a href="#mapa">Mapa</a></li>
 
-                <li><a href="#toplugares">Top 5 lugares</a></li>
+                <li><a href="#top-lugares">Top 5 lugares</a></li>
 
                 <li><a href="#sobre-mi">Sobre mí</a></li>
                 
@@ -44,7 +45,7 @@
     <p>
         Mi objetivo es inspirarte a explorar la belleza natural y cultural de Argentina. Ya sea que busques aventura, relax o una experiencia única, quiero ayudarte a encontrar ese lugar especial que te enamore.
     </p>
-    <img src="media/img/logo.png" alt="Paisaje de La Boca" width="100%" height="100">
+    <img src="media/img/logo.png" alt="Paisaje de La Boca">
     </section>
     <section id="destinos">
         <h2>Destinos Destacados</h2>
@@ -85,31 +86,31 @@
         <p>Un recorrido visual por los destinos que amo y que me inspiran a seguir explorando.</p>
      <div class="galeria-grid"> 
         <figure>
-            <img src="media/img/galeria1.png" alt="Postal de Pedro Vargas" width="100%" height="auto">
+            <img src="media/img/galeria1.png" alt="Postal de Pedro Vargas">
             <figcaption>Pedro Vargas</figcaption>
         </figure>
         <figure>
-            <img src="media/img/galeria2.png" alt="Camino postal de Pedro Vargas" width="100%" height="auto">
+            <img src="media/img/galeria2.png" alt="Camino postal de Pedro Vargas">
             <figcaption>Pedro Vargas</figcaption>
         </figure>
         <figure>
-            <img src="media/img/galeria3.png" alt="Postal Pedro Vargas" width="100%" height="auto">
+            <img src="media/img/galeria3.png" alt="Postal Pedro Vargas">
             <figcaption>Pedro Vargas</figcaption>
         </figure>
         <figure>
-            <img src="media/img/galeria4.png" alt="Postal de Malargüe" width="100%" height="auto">
+            <img src="media/img/galeria4.png" alt="Postal de Malargüe">
             <figcaption>Malargüe</figcaption>
         </figure>
         <figure>
-            <img src="media/img/galeria5.png" alt="Postal Hotel abandonado El Sosneado" width="100%" height="auto">
+            <img src="media/img/galeria5.png" alt="Postal Hotel abandonado El Sosneado">
             <figcaption>Hotel abandonado El Sosneado</figcaption>
         </figure>
         <figure>
-            <img src="media/img/galeria6.png" alt="Sendero a Las Coloraadas, San Juan" width="100%" height="auto">
+            <img src="media/img/galeria6.png" alt="Sendero a Las Coloraadas, San Juan">
             <figcaption>Sendero Las Coloradas</figcaption>
         </figure>
         <figure>
-            <img src="media/img/galeria7.png" alt="Mirador del Sol, Merlo, San Luis" width="100%" height="auto">
+            <img src="media/img/galeria7.png" alt="Mirador del Sol, Merlo, San Luis">
             <figcaption>Mirador del sol, Merlo, San Luis</figcaption>
         </figure>
      </div>
@@ -117,12 +118,12 @@
     <section id="mapa">
         <h2>El mapa de nuestras próximas aventuras</h2>
         <p>¡Acá empieza la aventura! Solo falta elegir hacia dónde.</p>
-       <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25596424.265591845!2d-63.598995699999996!3d-38.451550000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf5f5fdc667%3A0x3d2f77992af00fa8!2sArgentina!5e0!3m2!1ses-419!2sar!4v1746036888506!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+       <div class="mapa-contenedor"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25596424.265591845!2d-63.598995699999996!3d-38.451550000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf5f5fdc667%3A0x3d2f77992af00fa8!2sArgentina!5e0!3m2!1ses-419!2sar!4v1746036888506!5m2!1ses-419!2sar" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             Descargar mapa de Argentina 
             </iframe>
         </div>
     </section>     
-    <section  id="toplugares">
+    <section  id="top-lugares">
      <h2>Mis caminos recorridos y los que me esperan</h2>
         <div class="top-container">
             <!-- Lugares que más me marcaron -->
@@ -168,15 +169,12 @@
             </div>
         </div>
     </section>
-    <!-- Contenedor para productos -->
-<section id="productos"></section>
-
-<!-- Contenedor para el carrito -->
+<!-- Contenedor para el carrito
 <section id="carrito">
   <div id="lista-carrito"></div>
   <p id="total">Total: $0</p>
   <button id="vaciar-carrito">Vaciar carrito</button>
-</section>
+</section>-->
 
     <section class="descarga">
         <h2>Argentina</h2>
@@ -208,17 +206,17 @@
     <section id="contacto">
       <h2>Contacto</h2>
      <form action="https://formspree.io/f/xblojnwq" method="POST" target="_blank">
-      <label for="nombre">Nombre:</label><br>
-      <input type="text" id="nombre" name="nombre" required><br><br>
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
-      <label for="mensaje">Mensaje:</label><br>
-      <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea>
       <button type="submit">Enviar</button>
-        <p id="mensaje-error" style="color: red;"></p>
+        <p id="mensaje-error"></p>
      </form>
     </section>
-    <section id="excursiones">
+    <section id="tienda">
         <h2>Excursiones</h2>
         <div id="productos" class="grid"></div> 
     </section>
@@ -237,7 +235,7 @@
 </main>
     <footer class="derechos"> <!--footer es el pie de página-->
      <p>Última actualización: <span id="fecha"></span></p>
-     <p>&copy; 2025 Mapeando Argentina - Todos los derechos reservados.</p> 
+     <p>&copy; 2025-2026 Mapeando Argentina - Todos los derechos reservados.</p>
      <p><a href="https://www.instagram.com/agus_nunez98/" target="_blank">
         <i class="fab fa-instagram"></i> Instagram
      </a>
