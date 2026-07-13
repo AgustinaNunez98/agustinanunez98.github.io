@@ -1,80 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("fecha").innerText = new Date().toLocaleDateString();
-});
-
 // Esperamos que cargue todo el DOM
-document.addEventListener("DOMContentLoaded", function () {
-  const boton = document.getElementById("volverArriba");
-  const footer = document.querySelector("footer");
-
-  // Función para verificar si el footer está visible
-  function isFooterVisible() {
-    const rect = footer.getBoundingClientRect();
-    return (
-      rect.top < window.innerHeight && rect.bottom >= 0
-    );
-  }
-
-  // Escuchamos el scroll
-  window.addEventListener("scroll", function () {
-    if (isFooterVisible()) {
-      boton.style.display = "block";
-    } else {
-      boton.style.display = "none";
-    }
-  });
-
-  // Acción del botón: volver arriba
-  boton.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+document.addEventListener("DOMContentLoaded", () => {
+    mostrarFecha();
+    configurarBotonVolverArriba();
+    configurarFormulario();
+    cargarResenas();
+    configurarCarrito();
 });
-
-document.getElementById("contacto").addEventListener("submit", function(e) {
-  e.preventDefault(); // evita el envío
-
-  const nombre = document.getElementById("nombre").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const mensajeError = document.getElementById("mensaje-error");
-
-  if (nombre === "" || email === "") { //Muestra un mensaje si están vacíos
-    mensajeError.textContent = "Por favor, completá todos los campos.";
-    return;
-  }
-
-  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Verifica si el email tiene un formato válido
-  if (!emailValido.test(email)) {
-    mensajeError.textContent = "Ingresá un correo válido.";
-    return;
-  }
-
-  // Si pasa las validaciones:
-  mensajeError.textContent = "";
-  alert("Formulario enviado correctamente"); // Podés reemplazar esto por un envío real
-  // e.target.submit(); ← descomentá si usás Formspree
-});
-
-
-fetch('https://jsonplaceholder.typicode.com/posts?_limit=3')
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('api-posts');
-    data.forEach(post => {
-      const div = document.createElement('div');
-      div.innerHTML = `
-        <h3>“${post.title.charAt(0).toUpperCase() + post.title.slice(1)}”</h3>
-        <p>${post.body}</p>
-        <p><em>🌎 Viajero anónimo</em></p>
-        <hr/>
-      `;
-      container.appendChild(div);
-    });
-  })
-  .catch(error => {
-    console.error('Error al cargar reseñas:', error);
-  });
-
-
 
 // Array con productos disponibles
 const productos = [
@@ -83,31 +14,58 @@ const productos = [
   { id: 3, nombre: "Salinas Grandes", precio: 12000 }
 ];
 
-// Referencias a los contenedores del DOM
-const contenedorProductos = document.getElementById('productos');
-const contenedorCarrito = document.getElementById('lista-carrito');
-const totalTexto = document.getElementById('total');
-const btnVaciar = document.getElementById('vaciar-carrito');
+// Referencias al DOM
+const botonVolver = document.getElementById("volverArriba");
+
+const formulario = document.querySelector("#contacto form");
+const inputNombre = document.getElementById("nombre");
+const inputEmail = document.getElementById("email");
+const inputMensaje = document.getElementById("mensaje");
+const mensajeError = document.getElementById("mensaje-error");
+
+const contenedorResenas = document.getElementById("api-posts");
+
+const contenedorProductos = document.getElementById("productos");
+const contenedorCarrito = document.getElementById("lista-carrito");
+const totalTexto = document.getElementById("total");
+const btnVaciar = document.getElementById("vaciar-carrito");
+
+//Función mostrar la fecha actual en el footer
+function mostrarFecha() {
+  const fecha = document.getElementById("fecha");
+
+  if (fecha) {
+    fecha.textContent = new Date().toLocaleDateString("es-AR");
+  }
+}
 
 // Inicializamos el carrito desde localStorage o vacío si no existe
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-// Función para mostrar productos en la página
-function mostrarProductos() {
-  productos.forEach(producto => {
-    const div = document.createElement('div');
-    div.innerHTML = `
-      <h3>${producto.nombre}</h3>
-      <p>Precio: $${producto.precio}</p>
-      <button onclick="agregarAlCarrito(${producto.id})">Agregar</button>
-    `;
-    contenedorProductos.appendChild(div);
-  });
+//Función para configurar el carrito de compras
+function configurarCarrito() {
+  if (contenedorProductos){
+  mostrarProductos();
+  }
+
+  if (contenedorCarrito && totalTexto) {
+    renderizarCarrito();
+  }
+
+  if (btnVaciar) {
+    btnVaciar.addEventListener("click", () => {
+      carrito = [];
+      guardarYActualizar();
+    });
+  }
 }
 
 // Función para agregar un producto al carrito
 function agregarAlCarrito(id) {
   const producto = productos.find(p => p.id === id);
+
+  if(!producto) return;
+
   carrito.push(producto);
   guardarYActualizar();
   alert(`${producto.nombre} agregado al carrito`);
@@ -119,43 +77,106 @@ function eliminarDelCarrito(index) {
   guardarYActualizar();
 }
 
-// Vaciar carrito al hacer click en el botón
-btnVaciar.addEventListener('click', () => {
-  carrito = [];
-  guardarYActualizar();
-});
-
 // Guardar carrito en localStorage y actualizar la vista
 function guardarYActualizar() {
-  localStorage.setItem('carrito', JSON.stringify(carrito));
-  renderizarCarrito();
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  if (contenedorCarrito && totalTexto) {
+    renderizarCarrito();
+  }
 }
 
-// Renderizar productos del carrito y calcular total
-function renderizarCarrito() {
-  contenedorCarrito.innerHTML = "";
-  let total = 0;
+//Función configuración del botón "Volver Arriba"
+function configurarBotonVolverArriba() {
+  if (!botonVolver) return;
 
-  if (carrito.length === 0) {
-    contenedorCarrito.innerHTML = "<p>Tu carrito está vacío.</p>";
-    totalTexto.textContent = "Total: $0";
-    return;
+  function mostrarUOcultarBoton() {
+    const distanciaScroll = 400;
+
+    if (window.scrollY > distanciaScroll) {
+      botonVolver.classList.add("visible");
+    } else {
+      botonVolver.classList.remove("visible");
+    }
   }
 
-  carrito.forEach((producto, index) => {
-    const div = document.createElement('div');
-    div.innerHTML = `
-      <h4>${producto.nombre}</h4>
-      <p>Precio: $${producto.precio}</p>
-      <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
-    `;
-    contenedorCarrito.appendChild(div);
-    total += producto.precio;
+  botonVolver.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
 
-  totalTexto.textContent = `Total: $${total}`;
+  window.addEventListener("scroll", mostrarUOcultarBoton);
+
+  mostrarUOcultarBoton();
 }
 
-// Al cargar la página, mostramos productos y carrito
-mostrarProductos();
-renderizarCarrito();
+//Función configuración del formulario de contacto
+function configurarFormulario() {
+if (!formulario) return;
+
+formulario.addEventListener("submit", (e) => {
+const nombre = inputNombre.value.trim();
+const email = inputEmail.value.trim();
+const mensaje = inputMensaje.value.trim();
+
+if (mensajeError) {
+mensajeError.textContent = "";
+}
+if (nombre === "" || email === "" || mensaje === "") {
+e.preventDefault();
+if (mensajeError) {
+mensajeError.textContent = "Por favor, complete todos los campos.";
+}
+return;
+}
+const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(!emailValido.test(email)) {
+e.preventDefault();
+if (mensajeError) {
+mensajeError.textContent = "Por favor, ingrese un correo electrónico válido.";
+}
+}
+});
+}
+
+
+//Función para cargar reseñas desde una API
+function cargarResenas() {
+  if (!contenedorResenas) return;
+
+  fetch("https://jsonplaceholder.typicode.com/posts?_limit=3")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("No se pudieron cargar las reseñas.");
+      }
+
+      return response.json();
+    })
+    .then((resenas) => {
+      contenedorResenas.innerHTML = "";
+
+      resenas.forEach((resena) => {
+        const articulo = document.createElement("article");
+
+        articulo.innerHTML = `
+          <h3>${capitalizarTexto(resena.title)}</h3>
+          <p>${resena.body}</p>
+          <p><em>Viajero anónimo</em></p>
+        `;
+
+        contenedorResenas.appendChild(articulo);
+      });
+    })
+    .catch(() => {
+      contenedorResenas.innerHTML = `
+        <p>No pudimos cargar las reseñas en este momento.</p>
+      `;
+    });
+}
+
+function capitalizarTexto(texto) {
+  return texto.charAt(0).toUpperCase() + texto.slice(1);
+}

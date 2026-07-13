@@ -32,7 +32,6 @@ body{font-family:Arial, sans-serif;
     scroll-behavior:smooth;
 }
 
-
 /* =====================================
    ELEMENTOS GENERALES
 ===================================== */
@@ -438,20 +437,29 @@ img{display:block;
 #contacto button:hover{background:var(--color-primary-dark);
 }
 
-#volverArriba{position:fixed;
-    bottom:20px;
-    right:20px;
-    padding:10px 15px;
-    background:var(--color-primary);
-    color:var(--color-white);
-    border:none;
-    border-radius:10px;
-    font-size:1rem;
-    cursor:pointer;
-    display:none;
-    transition:.3s;
-    z-index:1000;
-    box-shadow:var(--shadow);
+#volverArriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity .3s ease, transform .3s ease, background .3s ease;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+#volverArriba.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 #volverArriba:hover{background:var(--color-primary-dark);
@@ -485,7 +493,7 @@ img{display:block;
 /* =====================================
    EXCURSIONES
 ===================================== */
-#excursiones{margin:20px;
+#tienda{margin:20px;
     background:linear-gradient(
         to bottom,
         #eef7ff,
