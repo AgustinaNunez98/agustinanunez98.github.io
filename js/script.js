@@ -162,39 +162,58 @@ mensajeError.textContent = "Por favor, ingrese un correo electrónico válido.";
 });
 }
 
+// Función para cargar destinos desde Wikipedia
+function cargarDestinos() {
+  if (!contenedorDestinos) return;
 
-//Función para cargar reseñas desde una API
-function cargarResenas() {
-  if (!contenedorResenas) return;
+  const destinos = [
+    "Cataratas del Iguazú",
+    "Glaciar Perito Moreno",
+    "San Carlos de Bariloche"
+  ];
 
-  fetch("https://jsonplaceholder.typicode.com/posts?_limit=3")
+  contenedorDestinos.innerHTML = "<p>Cargando destinos...</p>";
+
+  Promise.all(destinos.map(obtenerDestino))
+    .then((destinosCargados) => {
+      contenedorDestinos.innerHTML = "";
+
+      destinosCargados.forEach((destino) => {
+        const articulo = document.createElement("article");
+
+        articulo.innerHTML = `
+          ${destino.imagen ? `<img src="${destino.imagen}" alt="${destino.titulo}">` : ""}
+          <h3>${destino.titulo}</h3>
+          <p>${destino.descripcion}</p>
+          <a href="${destino.url}" target="_blank" rel="noopener noreferrer">Ver más</a>
+        `;
+
+        contenedorDestinos.appendChild(articulo);
+      });
+    })
+    .catch(() => {
+      contenedorDestinos.innerHTML = "<p>No pudimos cargar los destinos en este momento.</p>";
+    });
+}
+
+function obtenerDestino(nombre) {
+  const titulo = encodeURIComponent(nombre);
+  const url = `https://es.wikipedia.org/api/rest_v1/page/summary/${titulo}`;
+
+  return fetch(url)
     .then((response) => {
       if (!response.ok) {
-        throw new Error("No se pudieron cargar las reseñas.");
+        throw new Error("No se pudo cargar el destino.");
       }
 
       return response.json();
     })
-    .then((resenas) => {
-      contenedorResenas.innerHTML = "";
-
-      resenas.forEach((resena) => {
-        const articulo = document.createElement("article");
-
-        articulo.innerHTML = `
-          <h3>${capitalizarTexto(resena.title)}</h3>
-          <p>${resena.body}</p>
-          <p><em>Viajero anónimo</em></p>
-        `;
-
-        contenedorResenas.appendChild(articulo);
-      });
-    })
-    .catch(() => {
-      contenedorResenas.innerHTML = `
-        <p>No pudimos cargar las reseñas en este momento.</p>
-      `;
-    });
+    .then((data) => ({
+      titulo: data.title,
+      descripcion: data.extract,
+      imagen: data.thumbnail ? data.thumbnail.source : "",
+      url: data.content_urls.desktop.page
+    }));
 }
 
 function capitalizarTexto(texto) {
