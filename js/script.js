@@ -166,7 +166,7 @@ mensajeError.textContent = "Por favor, ingrese un correo electrónico válido.";
 function cargarDestinos() {
   if (!contenedorDestinos) return;
 
-  const destinos = [
+  constDestinos = [
     "Cataratas del Iguazú",
     "Glaciar Perito Moreno",
     "San Carlos de Bariloche"
